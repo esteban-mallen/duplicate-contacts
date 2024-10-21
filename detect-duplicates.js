@@ -53,14 +53,14 @@ const compareAddress = (contactA, contactB) => {
 
     let score = 0;
 
-    // Zip is present for both, and it's the same
-    if (zipA && zipB && zipA === zipB) {
-        score += 2;
-    }
-
     // Address is present for both, and it's the same
     if (addressA && addressB && addressA === addressB) {
         score += 3;
+
+        // Zip is present for both, and it's the same
+        if (zipA && zipB && zipA === zipB) {
+            score += 2;
+        }
     }
 
     return score;
